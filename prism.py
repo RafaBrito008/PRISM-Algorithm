@@ -51,7 +51,7 @@ while not df.empty:
     # Paso 4: Imprimir reglas
     for r in reglas:
         condition = f"{r[0][0]}={r[0][1]}"
-        print(f"SI {condition} ENTONCES cerveza=Sí -> Confianza = {r[1]:.2f}")
+        print(f"SI {condition} ENTONCES cerveza=Sí -> Confianza = {r[1]:.2f} | Soporte = {r[2]:.2f}")
 
     regla_seleccionada = reglas[0]
     reglas_seleccionadas.append(f"{regla_seleccionada[0][0]}={regla_seleccionada[0][1]}")
@@ -59,7 +59,7 @@ while not df.empty:
     
     print(f"\nRegla seleccionada para la iteración {iteration}:")
     condition = f"{regla_seleccionada[0][0]}={regla_seleccionada[0][1]}"
-    print(f"SI {condition} ENTONCES cerveza=Sí -> Confianza = {regla_seleccionada[1]:.2f}")
+    print(f"SI {condition} ENTONCES cerveza=Sí -> Confianza = {regla_seleccionada[1]:.2f} | Soporte = {regla_seleccionada[2]:.2f}")
 
     # Paso 5: Reducir el dataset
     condition = df[regla_seleccionada[0][0]] == regla_seleccionada[0][1]
